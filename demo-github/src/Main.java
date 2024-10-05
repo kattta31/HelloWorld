@@ -26,9 +26,38 @@ public class Main {
         } else {
             System.out.println("Your grade is F!");
         }
-
-        System.out.println("End of Program");
+        whileOperator();
     }
+
+    ///////////////////////Task2////////////////////
+    public static void whileOperator() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter something: ");
+        String userInput = scanner.nextLine();
+        String stopword = "exit";
+//        while (!userInput.equalsIgnoreCase(stopword)) {
+//            System.out.println("You've entered: " + userInput);
+//            System.out.println("Please enter something: ");
+//            userInput = scanner.nextLine();
+//        }
+        while (true) {
+
+            System.out.println("You've entered: " + userInput);
+
+            if (userInput.equalsIgnoreCase(stopword)) {
+                break;
+            }
+            System.out.println("Please enter something: ");
+            userInput = scanner.nextLine();
+
+        }
+
+        System.out.println("You are out of the loop.");
+    }
+
+    ///////////////////////Task3////////////////////
 
 
 }
+
+
