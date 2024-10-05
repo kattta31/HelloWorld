@@ -18,7 +18,7 @@ public class Main {
         boolean bool = byteNum != shortNum;
 
         System.out.println(name + " " + surname + "\nProfession: " + profession);
-        System.out.printf( "byte byteNum = %d \nshort shortNum = %d \nint intNum = %d \nlong longNum = %d" +
+        System.out.printf("byte byteNum = %d \nshort shortNum = %d \nint intNum = %d \nlong longNum = %d" +
                         "\ndouble doubleNum = %.3f \nfloat floatNum = %.2f \nchar ch = %c \nboolean bool = %b\n",
                         byteNum, shortNum, intNum, longNum, doubleNum, floatNum, ch, bool);
 
