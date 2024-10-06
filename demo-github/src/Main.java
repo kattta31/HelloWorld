@@ -1,10 +1,17 @@
+import java.net.SocketTimeoutException;
 import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
-        System.out.print("Please enter your score: ");
+        //  ifClause();
+        //  whileOperator();
+        sumOfNumbers();
+    }
 
+    ///////////////////////Task1////////////////////
+    public static void ifClause() {
+        System.out.print("Please enter your score: ");
         Scanner scanner = new Scanner(System.in);
         int userScore = scanner.nextInt();
 
@@ -26,7 +33,6 @@ public class Main {
         } else {
             System.out.println("Your grade is F!");
         }
-        whileOperator();
     }
 
     ///////////////////////Task2////////////////////
@@ -35,6 +41,7 @@ public class Main {
         System.out.println("Please enter something: ");
         String userInput = scanner.nextLine();
         String stopword = "exit";
+
 //        while (!userInput.equalsIgnoreCase(stopword)) {
 //            System.out.println("You've entered: " + userInput);
 //            System.out.println("Please enter something: ");
@@ -49,13 +56,49 @@ public class Main {
             }
             System.out.println("Please enter something: ");
             userInput = scanner.nextLine();
-
         }
-
         System.out.println("You are out of the loop.");
     }
 
     ///////////////////////Task3////////////////////
+    public static void sumOfNumbers() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a number: ");
+        int userInput = scanner.nextInt();
+        int sum = 0;
+
+
+//        for (int i = 0; i <= Math.abs(userInput); i++) {
+//            if (userInput < 0) {
+//                sum -= i;
+//            } else {
+//                sum += i;
+//            }
+//        }
+
+//        if (userInput < 0) {
+//            for (int i = 0; i >= userInput; i--) {
+//                sum += i;
+//            }
+//        } else {
+//            for (int i = 0; i <= userInput; i++) {
+//                sum += i;
+//            }
+//        }
+
+        if (userInput < 0) {
+            for (int i = userInput; i <= 0; i++) {
+                sum += i;
+            }
+        } else {
+            for (int i = 0; i <= userInput; i++) {
+                sum += i;
+            }
+        }
+
+        System.out.printf("Sum of numbers from 0 to %d is %d", userInput, sum);
+    }
 
 
 }
