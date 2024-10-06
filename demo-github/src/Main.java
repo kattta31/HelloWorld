@@ -1,12 +1,13 @@
-import java.net.SocketTimeoutException;
+
 import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
-        //  ifClause();
-        //  whileOperator();
+        ifClause();
+        whileOperator();
         sumOfNumbers();
+        remoteControl();
     }
 
     ///////////////////////Task1////////////////////
@@ -40,9 +41,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter something: ");
         String userInput = scanner.nextLine();
-        String stopword = "exit";
+        String stopWord = "exit";
 
-//        while (!userInput.equalsIgnoreCase(stopword)) {
+//        while (!userInput.equalsIgnoreCase(stopWord)) {
 //            System.out.println("You've entered: " + userInput);
 //            System.out.println("Please enter something: ");
 //            userInput = scanner.nextLine();
@@ -51,7 +52,7 @@ public class Main {
 
             System.out.println("You've entered: " + userInput);
 
-            if (userInput.equalsIgnoreCase(stopword)) {
+            if (userInput.equalsIgnoreCase(stopWord)) {
                 break;
             }
             System.out.println("Please enter something: ");
@@ -97,7 +98,46 @@ public class Main {
             }
         }
 
-        System.out.printf("Sum of numbers from 0 to %d is %d", userInput, sum);
+        System.out.printf("Sum of numbers from 0 to %d is %d\n", userInput, sum);
+    }
+
+    ///////////////////////Task4////////////////////
+    public static void remoteControl() {
+
+        String[] channels = new String[9];
+        channels[0] = "MTV";
+        channels[1] = "Discovery Channel";
+        channels[2] = "Animal Planet";
+        channels[3] = "CNN";
+        channels[4] = "BBC";
+        channels[5] = "Nickelodeon";
+        channels[6] = "Disney Channel";
+        channels[7] = "Fox News";
+        channels[8] = "Fox Sports";
+
+        Scanner scanner = new Scanner(System.in);
+        int userChoice;
+        System.out.printf("Please enter channel number from 1 to %d: ", channels.length);
+
+        do {
+            userChoice = scanner.nextInt();
+            switch (userChoice) {
+                case 1 -> System.out.println(channels[0]);
+                case 2 -> System.out.println(channels[1]);
+                case 3 -> System.out.println(channels[2]);
+                case 4 -> System.out.println(channels[3]);
+                case 5 -> System.out.println(channels[4]);
+                case 6 -> System.out.println(channels[5]);
+                case 7 -> System.out.println(channels[6]);
+                case 8 -> System.out.println(channels[7]);
+                case 9 -> System.out.println(channels[8]);
+                case 0 -> System.out.println("Exit");
+                default -> System.out.println("Sorry, wrong selection. Try again: ");
+            }
+
+        } while (!(userChoice == 0));
+
+
     }
 
 
