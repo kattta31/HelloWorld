@@ -1,3 +1,5 @@
+package components;
+
 public class Component {
     protected double price;
     protected String brand;
