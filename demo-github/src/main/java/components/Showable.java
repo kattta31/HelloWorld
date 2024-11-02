@@ -1,3 +1,5 @@
+package components;
+
 public interface Showable {
 
     public void showInfo();

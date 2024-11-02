@@ -1,4 +1,8 @@
+package components;
 
+import menu.Menu;
+
+import java.util.Scanner;
 
 public class Computer {
 
@@ -48,5 +52,29 @@ public class Computer {
         System.out.println("\n==================================================================");
 
     }
+
+    public static Computer createNewComputer() {
+
+        Computer computer = new Computer(Tower.createNewTower(), Monitor.createNewMonitor(), Mouse.createNewMouse(),
+                Keyboard.createNewKeyboard());
+        computer.showInfoComputer();
+        Menu.writeToFile(computer);
+        return computer;
+    }
+
+    public String getInfoComputer() {
+        String info = String.format("\n=================%s=======================\n"
+                + "\nThis computer assembly consists of the following components: " +
+                tower.getInfo() +
+                monitor.getInfo() +
+                mouse.getInfo() +
+                keyboard.getInfo() +
+
+                "\n==========================FINAL PRICE=============================" +
+                "\nThe total cost of assembling the computer is equal to - %.2f$"  +
+                "\n==================================================================", this.getClass().getName().toUpperCase(), computerPrice);
+        return info;
+    }
+
 
 }
